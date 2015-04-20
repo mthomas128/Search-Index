@@ -1,11 +1,11 @@
 # Sample dictionary of websites
 ListOfWebsites = {
-  "http://www.google.com": "Google",
-  "http://www.apple.com": "Apple",
-  "http://www.youtube.com": "YouTube",
-  "http://www.forbes.com": "Forbes",
-  "http://www.yahoo.com": "Yahoo",
-  "http://www.gmail.com": "Gmail"
+  "Google": "http://www.google.com",
+  "Apple": "http://www.apple.com",
+  "YouTube": "http://www.youtube.com",
+  "Forbes": "http://www.forbes.com",
+  "Yahoo!": "http://www.yahoo.com",
+  "Gmail": "http://www.gmail.com"
 }
 
 result = {}
@@ -14,7 +14,7 @@ result = {}
 def search(Websites, query):
   for i in Websites:
     for j in range(len(i)):
-      if i[j:j + len(query)] == query:
+      if i[j:j + len(query)].lower() == query.lower():
 	result.update({i: Websites[i]})
   return result
 
@@ -26,4 +26,4 @@ with open("output.txt", "r+") as output:
   # OVERWRITES OUTPUT FILE ON EACH RUN
   output.truncate()
   for i in result:
-    output.write(result[i] + " - " + i + "\n")
+    output.write(i + " - " + result[i] + "\n")
