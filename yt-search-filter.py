@@ -39,6 +39,7 @@ def search(Websites, query):
     for j in range(len(i)):
       if i[j:j + len(query)].lower() == query.lower():
 	result.update({i: Websites[i]})
+  return result
   
 YouTubeSearch(raw_input("Enter query for YouTube search:\n> "))
 
