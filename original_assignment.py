@@ -18,7 +18,6 @@ def search(Websites, query):
 	result.update({i: Websites[i]})
   return result
 
-# Runs function; looks nice in OS's command prompt
 search(ListOfWebsites, raw_input("Enter query:\n> "))
 
 # Writes to file to make large results more managable
@@ -26,4 +25,4 @@ with open("output.txt", "r+") as output:
   # OVERWRITES OUTPUT FILE ON EACH RUN
   output.truncate()
   for i in result:
-    output.write(i + " - " + result[i] + "\n")
+    output.write(i + " - " + result[i] + "\n\n")
